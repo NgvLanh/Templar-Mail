@@ -1,0 +1,131 @@
+:root {
+  --primary-color: #0d6efd;
+  --danger-color: #dc3545;
+  --info-color: #0dcaf0;
+}
+
+.btn {
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-weight: normal;
+  padding: 6px 12px;
+}
+
+.btn:hover {
+  box-shadow: none;
+  outline: none;
+}
+
+.btn:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.btn-primary:hover {
+  border-color: var(--primary-color);
+  box-shadow: none;
+  outline: none;
+  color: white;
+}
+
+.btn-primary:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.btn-danger {
+  background-color: transparent;
+  border: 1px solid var(--danger-color);
+  color: var(--danger-color);
+}
+
+.btn-danger:hover {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+  color: white;
+}
+
+.btn-info {
+  background-color: transparent;
+  border: 1px solid var(--info-color);
+  color: var(--info-color);
+}
+
+.btn-info:hover {
+  background-color: var(--info-color);
+  border-color: var(--info-color);
+  color: white;
+}
+
+.form-control {
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 8px 12px;
+  transition: border-color 0.2s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: none;
+}
+
+.table {
+  border-color: #dee2e6;
+}
+
+.table thead th {
+  border-bottom: 1px solid #dee2e6;
+  font-weight: 500;
+}
+
+/* Modal styles */
+.modal-content {
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  border-bottom: 1px solid #dee2e6;
+  padding: 1rem;
+}
+
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+  padding: 1rem;
+}
+
+.pagination .page-link {
+  border: 1px solid #dee2e6;
+  color: var(--primary-color);
+  background-color: transparent;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.pagination .page-link:hover {
+  background-color: #f8f9fa;
+  border-color: #dee2e6;
+  color: var(--primary-color);
+}
+
+.card {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.preview-content {
+  border: 1px solid #dee2e6;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+.container {
+  padding: 2rem 1rem;
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quản lý Template Email</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/template.css" />
+  </head>
+  <body class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+      <div class="container-fluid mx-4">
+        <a class="navbar-brand" href="/" style="color: #007bff"
+          >Quản lý Email - Templates</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="/templates">Mẫu Email</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/schedules">Lịch Thông báo</a>
+            </li>
+          </ul>
+          <li class="nav-item dropdown" style="list-style: none">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="userDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Xin chào: <strong id="user-name"></strong>
+              <img
+                src=""
+                alt="avatar"
+                id="picture"
+                class="rounded-circle"
+                style="width: 30px; height: 30px; margin-left: 5px"
+              />
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="userDropdown"
+            >
+              <li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
+            </ul>
+          </li>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid mt-4">
+      <h2>Quản lý Template Email</h2>
+
+      <button
+        type="button"
+        class="btn btn-primary mb-3"
+        onclick="openCreateModal()"
+      >
+        Tạo Template Mới
+      </button>
+
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="searchInput"
+          placeholder="Tìm kiếm theo tên template hoặc tiêu đề..."
+        />
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>STT</th>
+                <th>Tên Template</th>
+                <th>Tiêu đề</th>
+                <th>Lượt dùng</th>
+                <th>Ngày tạo</th>
+                <th>Thao tác</th>
+              </tr>
+            </thead>
+            <tbody id="templateList">
+              <tr>
+                <td colspan="6" class="text-center">Đang tải...</td>
+              </tr>
+              <!-- Render Template items -->
+            </tbody>
+          </table>
+
+          <nav>
+            <ul class="pagination justify-content-center" id="pagination">
+              <!-- Render Pagination -->
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!-- Template Modal -->
+    <div class="modal fade" id="templateModal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-title">Tạo Template Email Mới</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="templateForm">
+              <input type="hidden" name="id" id="template-id" />
+              <div class="mb-3">
+                <label class="form-label">Tên Template</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  placeholder="Nhập tên template"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Tiêu đề</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="subject"
+                  placeholder="Nhập tiêu đề email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Nội dung</label>
+                <textarea
+                  id="summernote"
+                  name="body"
+                  class="form-control"
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Preview</label>
+                <div class="preview-content" id="preview"></div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Đóng
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="modal-save-button"
+            >
+              Lưu
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <script src="/js/template.js"></script>
+  </body>
+</html>

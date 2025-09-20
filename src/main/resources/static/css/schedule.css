@@ -1,0 +1,80 @@
+input,
+select,
+textarea {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.schedule-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 32px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  font-family: Arial, sans-serif;
+}
+
+.schedule-container h2 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.schedule-container label {
+  font-weight: 500;
+}
+
+.schedule-container input,
+.schedule-container select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  margin-bottom: 18px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.schedule-container button {
+  width: 100%;
+  padding: 10px;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#generatedCron {
+  background: #f6f6f6;
+  padding: 8px;
+  border-radius: 6px;
+  margin-top: 6px;
+  font-family: monospace;
+  color: #333;
+}
+
+.container {
+  padding: 2rem 1rem;
+}
+
+.card-body {
+  overflow-x: auto;
+}
+
+.table {
+  min-width: 1300px;
+  width: 100%;
+}
+
+.table thead th {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 1;
+}
